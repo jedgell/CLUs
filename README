@@ -1,0 +1,34 @@
+This is the top directory of the CLUs.
+
+The CLUs are here because I get peeved having to remember that I have to 
+make a directory before I mount a drive in linux. Or that I have to
+remember to add xargs to a find to grep the results.
+
+Directory Structure:
+
+-README	 		--this file
+|
++filesystem 		--filesystem CLUs
++-mkmnt.sh 		--takes the name of a device (arg 1) in /dev and makes a dir 
+|				in /mnt and mounts the device at that location
+|				example: mkmnt cdrom
+|				would run: mkdir /mount/cdrom; mount /dev/cdrom /mnt/cdrom;
++-fixgrep.sh 		--takes the name of a directory (arg 1) and file type (d or f - arg 2) 
+|				and passes arg 3 as the grep first argument (FInd Xargs GREP)
+|				example: fixgrep /home/user f search\ phrase
+|				would run: find /home/user -type f | xargs grep search\ phrase
+
+Hope they're useful. Add back if you know a way to make a particular CLU
+more effective.
+
+Note: I can't provide any licensing for these utilities because many of
+them combine other programs with differing licenses (GPL v1,v2,v3; BSD, etc).
+
+Best to say that if a CLU's constituent programs don't extend their licensing
+mode, the CLU falls under GPL v2, however, always refer to constituent
+programs licensing models before assuming GPL v2 applies.
+
+Thx,
+
+J
+
